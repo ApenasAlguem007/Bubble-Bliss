@@ -1,0 +1,16 @@
+<mat-card class="form-card">
+  <h1 class="titulo-pagina">{{ idEmEdicao ? 'Editar ingrediente' : 'Novo ingrediente' }}</h1>
+  <p class="subtitulo">Informe o item e sua quantidade disponível.</p>
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+    <div class="form-grid">
+      <mat-form-field appearance="outline"><mat-label>Nome</mat-label><input matInput formControlName="nome"><mat-error>Informe o nome.</mat-error></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Categoria</mat-label><mat-select formControlName="categoria"><mat-option value="Chá">Chá</mat-option><mat-option value="Fruta">Fruta</mat-option><mat-option value="Leite">Leite</mat-option><mat-option value="Pérolas">Pérolas</mat-option><mat-option value="Cobertura">Cobertura</mat-option></mat-select><mat-error>Selecione uma categoria.</mat-error></mat-form-field>
+
+      <!-- Nome e categoria facilitam a identificação do ingrediente no estoque. -->
+
+      <mat-form-field appearance="outline"><mat-label>Quantidade</mat-label><input matInput type="number" formControlName="quantidade"><mat-error>Use zero ou um valor positivo.</mat-error></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Unidade</mat-label><mat-select formControlName="unidade"><mat-option value="kg">kg</mat-option><mat-option value="litros">litros</mat-option><mat-option value="pacotes">pacotes</mat-option><mat-option value="unidades">unidades</mat-option></mat-select><mat-error>Selecione a unidade.</mat-error></mat-form-field>
+    </div>
+    <div class="acoes-form"><a mat-button routerLink="/ingredientes">Cancelar</a><button mat-flat-button class="botao-principal" type="submit">Salvar ingrediente</button></div>
+  </form>
+</mat-card>

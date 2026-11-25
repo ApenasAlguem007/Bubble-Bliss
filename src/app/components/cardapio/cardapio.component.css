@@ -1,0 +1,30 @@
+h2 {
+  margin-bottom: 16px;
+}
+.campo-url {
+  min-width: 260px;
+}
+/* define margem no titulo e largura minima para o campo de URL externa. */
+.bebida-foto {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+/* ajusta a imagem da bebida para preencher o topo do card sem distorcer. */
+}
+.card-corpo {
+  padding: 16px;
+}
+.preco {
+/*  adiciona espacamento interno ao texto do card e inicia o estilo do preco. */
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0e7490;
+}
+.card-acoes {
+/* destaca o valor em azul escuro suave e prepara os botoes do card. */
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+/* alinha os botoes Editar e Excluir lado a lado com espacamento. */

@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #7bdff2;
+  color: #1f2d3d;
+  padding: 0 24px;
+  box-shadow: 0 3px 10px rgba(31, 45, 61, 0.08);
+/* aplica azul pastel na navbar, cor escura no texto e sombra leve. */
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+/* destaca o nome da marca na barra superior. */
+.espaco {
+  flex: 1 1 auto;
+}
+.links a {
+  margin-left: 8px;
+/* empurra os links para a direita e da espacamento entre eles. */
+  border-radius: 20px;
+  font-weight: 700;
+}
+.link-ativo {
+  background-color: #f7d6e0 !important;
+/* arredonda os botoes do menu e destaca o link ativo em rosa claro. */
+}
+/* encerra o CSS da barra de navegacao. */

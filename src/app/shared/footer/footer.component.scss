@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: var(--texto-suave);
+  background: var(--branco);
+  border-top: 1px solid rgba(73, 53, 72, 0.08);
+}
+
+// O rodapé é discreto para não competir com o conteúdo principal.

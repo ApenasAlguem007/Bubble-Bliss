@@ -1,0 +1,63 @@
+<h2>🧋 Cardápio de Bubble Tea (CRUD 1)</h2>
+
+<mat-card class="form-card">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome da bebida</mat-label>
+<!--  exibe o titulo da tela e abre o formulario com o campo nome da bebida. -->
+    <input matInput [(ngModel)]="bebidaForm.nome" placeholder="Ex: Taro Milk Tea">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sabor base</mat-label>
+<!-- conecta o input ao modelo e cria o seletor de sabor base. -->
+    <mat-select [(ngModel)]="bebidaForm.saborBase">
+      <mat-option *ngFor="let s of sabores" [value]="s">{{ s }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<!-- lista os sabores disponiveis dentro do select do Material. -->
+  <mat-form-field appearance="outline">
+    <mat-label>Tamanho</mat-label>
+    <mat-select [(ngModel)]="bebidaForm.tamanho">
+      <mat-option *ngFor="let t of tamanhos" [value]="t">{{ t }}</mat-option>
+    </mat-select>
+<!--  cria o seletor de tamanho com opcoes de 500ml e 700ml. -->
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Preço (R$)</mat-label>
+    <input matInput type="number" [(ngModel)]="bebidaForm.preco">
+<!--  fecha o seletor de tamanho e cria o campo numerico de preco. -->
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="campo-url">
+    <mat-label>URL da foto externa (opcional)</mat-label>
+    <input matInput [(ngModel)]="bebidaForm.imagemUrl" placeholder="https://...">
+<!-- adiciona um campo opcional para colar links de fotos externas. -->
+  </mat-form-field>
+
+  <button mat-raised-button class="btn-rosa" (click)="salvarBebida()">
+    {{ bebidaForm.id ? 'Atualizar' : 'Adicionar' }}
+  </button>
+<!-- cria o botao principal que alterna entre Adicionar e Atualizar. -->
+  <button mat-button (click)="limparFormulario()">Limpar</button>
+</mat-card>
+
+<div class="grid-cards">
+  <mat-card *ngFor="let b of bebidas" class="item-card">
+<!-- adiciona o botao limpar, fecha o formulario e inicia a grade de bebidas. -->
+    <img [src]="b.imagemUrl" (error)="aoFalharImagem($event, b.saborBase)" [alt]="b.nome" class="bebida-foto">
+    <div class="card-corpo">
+      <h3>{{ b.nome }}</h3>
+      <p>Base: <strong>{{ b.saborBase }}</strong> ({{ b.tamanho }})</p>
+      <p class="preco">R$ {{ b.preco | number:'1.2-2' }}</p>
+<!-- exibe a foto (externa ou fallback local), nome, sabor, tamanho e preco. -->
+      <div class="card-acoes">
+        <button mat-button (click)="editarBebida(b)">Editar</button>
+        <button mat-button class="btn-excluir" (click)="excluirBebida(b.id)">Excluir</button>
+      </div>
+    </div>
+  </mat-card>
+<!--  renderiza os botoes de editar e excluir e encerra cada card de bebida. -->
+</div>
+<!--  finaliza a grade de cards do cardapio. -->

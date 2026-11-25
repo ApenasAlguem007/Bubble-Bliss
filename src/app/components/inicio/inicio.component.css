@@ -1,0 +1,66 @@
+.hero-card {
+  background-color: #f7d6e0 !important;
+  border-radius: 22px !important;
+  padding: 28px !important;
+  margin-bottom: 24px;
+/* estiliza o banner principal com rosa claro e cantos bem arredondados. */
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+/* divide o banner em duas colunas com alinhamento vertical central. */
+}
+.tag {
+  background-color: #eff7f6;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+/* cria a etiqueta arredondada em tom claro suave acima do titulo. */
+}
+h1 {
+  margin: 14px 0 10px;
+  font-size: 1.85rem;
+}
+.acoes {
+/* ajusta margens e tamanho do titulo e abre o container dos botoes. */
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.btn-azul {
+/* organiza os botoes lado a lado e inicia a estilizacao do botao azul. */
+  background-color: #7bdff2 !important;
+  color: #1f2d3d !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+}
+.hero-foto {
+/* aplica azul pastel no botao secundario e inicia o estilo da foto. */
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid #ffffff;
+/* ajusta dimensoes, enquadramento e borda branca da foto do banner. */
+}
+.resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+/* cria grade responsiva para os dois cards de contagem da pagina inicial. */
+.resumo-box {
+  padding: 20px !important;
+  border-radius: 16px !important;
+  text-align: center;
+}
+.box-rosa { background-color: #f2b5d4 !important; }
+/* estiliza os cards de resumo e colore o primeiro com rosa pastel. */
+.box-menta { background-color: #b2f7ef !important; }
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+/* colore o segundo card em verde-agua e empilha as colunas em telas menores. */

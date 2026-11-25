@@ -1,0 +1,32 @@
+<mat-card class="hero-card">
+  <div class="hero-grid">
+    <div class="hero-texto">
+      <span class="tag">✨ Boba & Matcha Bar</span>
+      <h1>Sabor suave, pérolas fresquinhas e cores pastel</h1>
+<!-- cria o card principal em duas colunas com etiqueta, titulo e descricao. -->
+      <p>Gerencie o cardápio artesanal de bubble teas e personalize os toppings extras.</p>
+      <div class="acoes">
+        <a mat-raised-button class="btn-rosa" routerLink="/cardapio">Gerenciar Bebidas</a>
+        <a mat-raised-button class="btn-azul" routerLink="/toppings">Gerenciar Toppings</a>
+      </div>
+<!-- adiciona os botoes de atalho para as paginas de Cardapio e Toppings. -->
+    </div>
+    <div class="hero-foto-box">
+      <img [src]="bannerImg" (error)="aoFalharImagem($event)" alt="Copo de bubble tea pastel" class="hero-foto">
+    </div>
+  </div>
+</mat-card>
+
+<!-- exibe a imagem do banner com fallback automatico e fecha o card principal. -->
+<div class="resumo-grid">
+  <mat-card class="resumo-box box-rosa">
+    <h2>{{ totalBebidas }}</h2>
+    <p>Bebidas no Cardápio</p>
+  </mat-card>
+<!-- mostra o contador de bebidas cadastradas em um card rosa pastel. -->
+  <mat-card class="resumo-box box-menta">
+    <h2>{{ totalToppings }}</h2>
+    <p>Toppings Disponíveis</p>
+  </mat-card>
+</div>
+<!-- mostra o contador de toppings disponiveis em um card verde-agua. -->

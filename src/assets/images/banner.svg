@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b2f7ef"/>
+      <stop offset="100%" stop-color="#7bdff2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="28" fill="url(#bg)"/>
+  <circle cx="150" cy="110" r="70" fill="#f7d6e0" opacity="0.75"/>
+  <circle cx="670" cy="390" r="95" fill="#f2b5d4" opacity="0.7"/>
+  <!-- Canudo -->
+  <rect x="425" y="45" width="24" height="170" rx="10" transform="rotate(14 425 45)" fill="#f2b5d4" stroke="#1f2d3d" stroke-width="4"/>
+  <!-- Copo -->
+  <path d="M300 155 L500 155 L472 415 C470 430 458 440 442 440 L358 440 C342 440 330 430 328 415 Z" fill="#eff7f6" stroke="#1f2d3d" stroke-width="5"/>
+  <!-- Liquido -->
+  <path d="M312 225 L488 225 L468 410 C466 422 456 430 442 430 L358 430 C344 430 334 422 332 410 Z" fill="#f7d6e0"/>
+  <!-- Tampa -->
+  <rect x="286" y="140" width="228" height="22" rx="11" fill="#7bdff2" stroke="#1f2d3d" stroke-width="4"/>
+  <!-- Perolas de Tapioca -->
+  <circle cx="360" cy="395" r="14" fill="#1f2d3d"/><circle cx="395" cy="402" r="14" fill="#1f2d3d"/>
+  <circle cx="430" cy="395" r="14" fill="#1f2d3d"/><circle cx="378" cy="370" r="13" fill="#1f2d3d"/>
+  <circle cx="415" cy="372" r="13" fill="#1f2d3d"/><circle cx="445" cy="374" r="12" fill="#1f2d3d"/>
+  <text x="400" y="478" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#1f2d3d">Pastel Boba Tea Bar</text>
+</svg>

@@ -1,0 +1,32 @@
+h2 {
+  margin-bottom: 16px;
+}
+.topo-borda-menta {
+  border-top-color: #b2f7ef !important;
+}
+/*  define margem no titulo e aplica verde-agua pastel no topo do card. */
+.card-corpo {
+  padding: 18px;
+}
+.badge {
+  background-color: #f7d6e0;
+  padding: 4px 10px;
+/*  adiciona padding interno e estiliza a etiqueta de categoria em rosa. */
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.preco {
+  font-size: 1.15rem;
+/*  arredonda a etiqueta, deixa o texto em negrito e inicia o preco. */
+  font-weight: 700;
+  color: #be185d;
+  margin-top: 10px;
+}
+.card-acoes {
+/*  destaca o valor extra em rosa escuro e prepara os botoes do card. */
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+/*  alinha os botoes Editar e Excluir lado a lado com espacamento. */

@@ -1,0 +1,14 @@
+{
+  "name": "boba-pop-api",
+  "version": "1.0.0",
+  "description": "API do trabalho Boba Pop (Express + SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  }
+}

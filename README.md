@@ -1,59 +1,50 @@
-# ProjetoFinal
+# Bubble Bliss
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+O Bubble Bliss é uma aplicação web desenvolvida em Angular para gerenciar uma pequena loja de bubble tea. A proposta foi criar um sistema simples, organizado e agradável de usar, aplicando os conteúdos estudados em aula.
 
-## Development server
+## Funcionalidades
 
-To start a local development server, run:
+O projeto contém dois CRUDs completos:
 
-```bash
-ng serve
-```
+- Bebidas: cadastrar, visualizar, editar e excluir bubble teas.
+- Ingredientes: cadastrar, visualizar, editar e excluir itens do estoque.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Também há três links principais com Router Outlet: Início, Bubble Teas e Ingredientes.
 
-## Code scaffolding
+## Tecnologias
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 19
+- TypeScript
+- Angular Material
+- Angular Router
+- Reactive Forms
+- SCSS
+- LocalStorage
 
-```bash
-ng generate component component-name
-```
+## Como executar
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+É necessário possuir o Node.js em versão LTS e o Angular CLI.
 
-```bash
-ng generate --help
-```
+1. Abra a pasta do projeto no terminal.
+2. Execute `npm install`.
+3. Execute `npm start` ou `ng serve`.
+4. Acesse `http://localhost:4200`.
 
-## Building
+## Armazenamento
 
-To build the project run:
+Os dados são salvos no LocalStorage do navegador. Isso permite demonstrar persistência e CRUD sem depender de um servidor externo. Como melhoria futura, o serviço pode ser substituído por uma integração com Firebase Firestore ou uma API própria.
 
-```bash
-ng build
-```
+## Identidade visual
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+A interface utiliza as cores `#7bdff2`, `#b2f7ef`, `#eff7f6`, `#f7d6e0`, `#f2b5d4` e `#493548`.
 
-## Running unit tests
+## Estrutura
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- `models`: interfaces dos dados.
+- `services`: regras de CRUD e LocalStorage.
+- `pages`: páginas de início, bebidas e ingredientes.
+- `shared`: cabeçalho e rodapé reutilizáveis.
 
-```bash
-ng test
-```
+## Autoria
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Projeto acadêmico desenvolvido por Geovanna Pereira da Silva.

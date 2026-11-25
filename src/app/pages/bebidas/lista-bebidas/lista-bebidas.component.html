@@ -1,0 +1,20 @@
+<header class="cabecalho-pagina">
+  <div><h1 class="titulo-pagina">Nossos bubble teas</h1><p class="subtitulo">Cadastre sabores, atualize preços e acompanhe o estoque.</p></div>
+  <a mat-flat-button class="botao-principal" routerLink="/bebidas/nova"><mat-icon>add</mat-icon> Nova bebida</a>
+</header>
+
+<!-- O cabeçalho explica a tela e oferece acesso direto ao cadastro. -->
+
+@if (bebidas.length) {
+  <section class="grade-bebidas">
+    @for (bebida of bebidas; track bebida.id) {
+      <mat-card class="card-bebida">
+        <div class="imagem-wrap"><img [src]="bebida.imagem" [alt]="bebida.nome" (error)="$any($event.target).src='https://placehold.co/800x600/f7d6e0/493548?text=Bubble+Tea'"><span class="status" [class.indisponivel]="!bebida.disponivel">{{ bebida.disponivel ? 'Disponível' : 'Indisponível' }}</span></div>
+        <mat-card-content><span class="tamanho">Tamanho {{ bebida.tamanho }}</span><h2>{{ bebida.nome }}</h2><p>{{ bebida.sabor }}</p><div class="dados"><strong>{{ bebida.preco | currency:'BRL' }}</strong><span>Estoque: {{ bebida.estoque }}</span></div></mat-card-content>
+        <mat-card-actions><button mat-button (click)="editar(bebida.id)"><mat-icon>edit</mat-icon> Editar</button><button mat-button class="excluir" (click)="excluir(bebida.id, bebida.nome)"><mat-icon>delete</mat-icon> Excluir</button></mat-card-actions>
+      </mat-card>
+    }
+  </section>
+} @else {
+  <div class="estado-vazio"><h2>Nenhuma bebida cadastrada</h2><p>Crie o primeiro sabor para começar.</p></div>
+}

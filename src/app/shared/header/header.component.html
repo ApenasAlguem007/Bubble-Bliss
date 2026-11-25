@@ -1,0 +1,16 @@
+<mat-toolbar class="cabecalho">
+  <a routerLink="/" class="marca" aria-label="Ir para o início">
+    <span class="copo">B</span>
+    <span>Bubble Bliss</span>
+  </a>
+
+  <!-- A marca também funciona como um atalho para a página inicial. -->
+
+  <span class="espacador"></span>
+  <nav aria-label="Menu principal">
+    <a mat-button routerLink="/" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }">Início</a>
+    <a mat-button routerLink="/bebidas" routerLinkActive="ativo">Bubble Teas</a>
+    <a mat-button routerLink="/ingredientes" routerLinkActive="ativo">Ingredientes</a>
+  </nav>
+</mat-toolbar>
+<!-- Os três links atendem ao requisito de navegação com Router Outlet. -->

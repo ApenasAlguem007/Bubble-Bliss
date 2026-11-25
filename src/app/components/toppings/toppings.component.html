@@ -1,0 +1,47 @@
+<h2>✨ Toppings & Extras (CRUD 2)</h2>
+
+<mat-card class="form-card">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome do topping</mat-label>
+<!-- exibe o titulo do segundo CRUD e cria o campo nome do topping. -->
+    <input matInput [(ngModel)]="toppingForm.nome" placeholder="Ex: Jelly de Lichia">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Categoria</mat-label>
+<!-- conecta o input ao toppingForm e abre o seletor de categoria. -->
+    <mat-select [(ngModel)]="toppingForm.categoria">
+      <mat-option *ngFor="let c of categorias" [value]="c">{{ c }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<!-- popula as opcoes de categorias dentro do select do Material. -->
+  <mat-form-field appearance="outline">
+    <mat-label>Preço extra (R$)</mat-label>
+    <input matInput type="number" [(ngModel)]="toppingForm.precoExtra">
+  </mat-form-field>
+
+<!-- cria o campo numerico para informar o valor extra do topping. -->
+  <button mat-raised-button class="btn-rosa" (click)="salvarTopping()">
+    {{ toppingForm.id ? 'Atualizar' : 'Adicionar' }}
+  </button>
+  <button mat-button (click)="limparFormulario()">Limpar</button>
+</mat-card>
+
+<!-- exibe os botoes de salvar/atualizar e limpar do formulario. -->
+<div class="grid-cards">
+  <mat-card *ngFor="let t of toppings" class="item-card topo-borda-menta">
+    <div class="card-corpo">
+      <span class="badge">{{ t.categoria }}</span>
+      <h3>{{ t.nome }}</h3>
+<!-- lista cada topping cadastrado com borda menta, etiqueta e nome. -->
+      <p class="preco">+ R$ {{ t.precoExtra | number:'1.2-2' }}</p>
+      <div class="card-acoes">
+        <button mat-button (click)="editarTopping(t)">Editar</button>
+        <button mat-button class="btn-excluir" (click)="excluirTopping(t.id)">Excluir</button>
+      </div>
+    </div>
+<!-- mostra o valor adicional formatado e os botoes Editar e Excluir. -->
+  </mat-card>
+</div>
+<!-- finaliza a grade de cards dos toppings. -->

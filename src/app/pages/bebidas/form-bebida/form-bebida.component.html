@@ -1,0 +1,22 @@
+<mat-card class="form-card">
+  <h1 class="titulo-pagina">{{ idEmEdicao ? 'Editar bebida' : 'Nova bebida' }}</h1>
+  <p class="subtitulo">Preencha as informações do bubble tea. Os campos são obrigatórios.</p>
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+    <div class="form-grid">
+      <mat-form-field appearance="outline"><mat-label>Nome</mat-label><input matInput formControlName="nome"><mat-error>Digite pelo menos 3 caracteres.</mat-error></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Sabor</mat-label><input matInput formControlName="sabor"><mat-error>Informe o sabor.</mat-error></mat-form-field>
+
+      <!-- Os dois primeiros campos identificam o produto para o cliente. -->
+
+      <mat-form-field appearance="outline"><mat-label>Tamanho</mat-label><mat-select formControlName="tamanho"><mat-option value="P">Pequeno</mat-option><mat-option value="M">Médio</mat-option><mat-option value="G">Grande</mat-option></mat-select></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Preço</mat-label><span matTextPrefix>R$&nbsp;</span><input matInput type="number" step="0.01" formControlName="preco"><mat-error>Informe um preço maior que zero.</mat-error></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Estoque</mat-label><input matInput type="number" formControlName="estoque"><mat-error>O estoque não pode ser negativo.</mat-error></mat-form-field>
+      <div class="status-check"><mat-checkbox formControlName="disponivel">Disponível para venda</mat-checkbox></div>
+
+      <!-- Estes campos controlam tamanho, preço, quantidade e disponibilidade. -->
+
+      <mat-form-field appearance="outline" class="campo-largo"><mat-label>URL da imagem</mat-label><input matInput formControlName="imagem"><mat-hint>Use um link de imagem do Unsplash ou Pexels.</mat-hint><mat-error>Informe a imagem.</mat-error></mat-form-field>
+    </div>
+    <div class="acoes-form"><a mat-button routerLink="/bebidas">Cancelar</a><button mat-flat-button class="botao-principal" type="submit">Salvar bebida</button></div>
+  </form>
+</mat-card>

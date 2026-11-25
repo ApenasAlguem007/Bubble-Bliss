@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #eff7f6;
+/* padroniza box-sizing, zera margens e aplica o fundo claro da paleta. */
+  color: #1f2d3d;
+  font-family: 'Quicksand', sans-serif;
+}
+.container {
+  max-width: 1060px;
+  margin: 28px auto;
+/* define cor do texto, tipografia e centraliza o container principal. */
+  padding: 0 16px;
+}
+.form-card {
+  background-color: #b2f7ef !important;
+  border: 1px solid #7bdff2;
+  border-radius: 18px !important;
+/* estiliza o card de cadastro com verde-agua pastel e borda azul suave. */
+  padding: 20px !important;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+/* organiza os campos do formulario em linha flexivel com espacamento. */
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(31, 45, 61, 0.05) !important;
+}
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+/* alinha os itens do formulario e cria a grade responsiva de cards. */
+  gap: 18px;
+}
+.item-card {
+  background-color: #ffffff !important;
+  border-top: 5px solid #7bdff2;
+  border-radius: 16px !important;
+/* define espacamento da grade e estiliza cada card com topo azul pastel. */
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(31, 45, 61, 0.06) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.item-card:hover {
+/* recorta excessos nas bordas, aplica sombra e inicia efeito hover. */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(31, 45, 61, 0.1) !important;
+}
+.btn-rosa {
+  background-color: #f2b5d4 !important;
+/* eleva levemente o card ao passar o mouse e define o botao rosa. */
+  color: #1f2d3d !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+}
+.btn-excluir {
+/* aplica rosa pastel no botao principal e inicia estilo do botao excluir. */
+  color: #b91c1c !important;
+  font-weight: 700 !important;
+}
+/* deixa o texto de excluir em vermelho escuro para evitar cliques acidentais. */

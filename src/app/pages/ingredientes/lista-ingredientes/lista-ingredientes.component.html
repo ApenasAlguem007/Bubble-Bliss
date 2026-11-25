@@ -1,0 +1,21 @@
+<header class="cabecalho-pagina">
+  <div><h1 class="titulo-pagina">Ingredientes</h1><p class="subtitulo">Controle os itens usados na preparação das bebidas.</p></div>
+  <a mat-flat-button class="botao-principal" routerLink="/ingredientes/novo"><mat-icon>add</mat-icon> Novo ingrediente</a>
+</header>
+
+<!-- O botão acima abre o formulário de criação do segundo CRUD. -->
+
+@if (ingredientes.length) {
+  <div class="tabela-wrap">
+    <table mat-table [dataSource]="ingredientes">
+      <ng-container matColumnDef="nome"><th mat-header-cell *matHeaderCellDef>Ingrediente</th><td mat-cell *matCellDef="let item"><strong>{{ item.nome }}</strong></td></ng-container>
+      <ng-container matColumnDef="categoria"><th mat-header-cell *matHeaderCellDef>Categoria</th><td mat-cell *matCellDef="let item"><span class="categoria">{{ item.categoria }}</span></td></ng-container>
+      <ng-container matColumnDef="quantidade"><th mat-header-cell *matHeaderCellDef>Quantidade</th><td mat-cell *matCellDef="let item">{{ item.quantidade }} {{ item.unidade }}</td></ng-container>
+
+      <!-- As colunas anteriores mostram a identificação e o estoque de cada item. -->
+
+      <ng-container matColumnDef="acoes"><th mat-header-cell *matHeaderCellDef>Ações</th><td mat-cell *matCellDef="let item"><button mat-icon-button aria-label="Editar" (click)="editar(item.id)"><mat-icon>edit</mat-icon></button><button mat-icon-button class="excluir" aria-label="Excluir" (click)="excluir(item.id, item.nome)"><mat-icon>delete</mat-icon></button></td></ng-container>
+      <tr mat-header-row *matHeaderRowDef="colunas"></tr><tr mat-row *matRowDef="let row; columns: colunas"></tr>
+    </table>
+  </div>
+} @else { <div class="estado-vazio"><h2>Nenhum ingrediente cadastrado</h2></div> }
